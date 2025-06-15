@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Portfolio - Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f6f9fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .home-section {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.pexels.com/photos/1251299/pexels-photo-1251299.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .home-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #b5bcc3;
+    }
+
+    .home-section h2 {
+      font-size: 2.2rem;
+      color: #dee1e4;
+      margin: 20px 0 10px;
+    }
+
+    .home-section p {
+      font-size: 1rem;
+      color: #b5b5b5;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .circle-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .circle-link {
+      width: 100px;
+      height: 50px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .circle-link:hover {
+      transform: scale(1.05);
+    }
+
+    .yellow { background-color: #f1c40f; }
+    .pink { background-color: #434249; }
+    .orange { background-color: #e67e22; } 
+    .blue { background-color: #2c3e50; }
+
+    .section {
+      padding: 60px 20px;
+      background-color: #f0f1f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #creative {
+      background-color: #d3eafa;
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #published {
+     background-color: #d3eafa;
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #internship {
+      background-color: #d3eafa;
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    #extracurricular {
+      background-color: #d3eafa;
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    #audiovisual {
+      background-color: #d3eafa;
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    .section h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .entry {
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .entry h4 {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 5px;
+    }
+
+    .entry p {
+      font-size: 0.95rem;
+      color: #4b4b4b;
+      margin: 0 0 10px;
+    }
+
+    .entry a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .entry a:hover {
+      text-decoration: underline;
+    }
+
+    .align {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+
+      gap: 20px;
+    }
+
+    .align img {
+      width: 200px;
+      border-radius: 10px;
+      border-color: #282e32;
+      height: 200px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+
+    footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 30px 20px 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-content {
+  max-width: 300px;
+}
+
+.footer-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+
+.footer-content a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #7f8c8d;
+  padding-top: 10px;
+  font-size: 0.85rem;
+  color: #bdc3c7;
+}
+
+
+
+
+    /* Existing styles above remain unchanged */
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+
+  .home-section {
+    padding: 40px 15px;
+  }
+
+  .home-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-section p {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .circle-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .circle-link {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .circle-link:hover {
+    transform: scale(1.05);
+  }
+
+  #creative,
+  #published,
+  #internship,
+  #extracurricular,
+  #audiovisual {
+    margin: 30px 15px;
+    border-radius: 30px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  .section h3 {
+    font-size: 1.4rem;
+  }
+
+  .entry {
+    max-width: 100%;
+  }
+
+  .entry h4 {
+    font-size: 1.1rem;
+  }
+
+  .entry p {
+    font-size: 0.9rem;
+  }
+
+  .align {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .align img {
+    width: 90%;
+    height: auto;
+  }
+
+  .home-section img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Hamburger icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile nav */
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #2c3e50;
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 20px;
+    font-size: 1rem;
+    border-top: 1px solid #34495e;
+    padding-top: 10px;
+  }
+}
+
+
+
+
+
+  </style>
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById('mobile-menu');
+    const nav = document.getElementById('navbar');
+
+    menu.addEventListener('click', function () {
+      nav.classList.toggle('active');
+    });
+  });
+</script>
+
+
+
+
+<body>
+
+  <header>
+    <h1>My Digital Portfolio</h1>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <nav id="navbar">
+      <a href="#home">Home</a>
+      <a href="#creative">Creative</a>
+      <a href="#published">Published</a>
+      <a href="#internship">Internship</a>
+      <a href="#extracurricular">Extracurricular</a>
+      <a href="#audiovisual">AV Files</a>
+    </nav>
+  </header>
+
+
+  <div class="content">
+    <section id="home" class="home-section">
+    <div class="back"></div>
+    <img src="others\IMG-20250614-WA0021[1].jpg" alt="Profile Photo" />
+    <h2>Hello<br>A bit about me</h2>
+    <p>My self Mumtaz Fatima. I am a digital content creator with a background in journalism and multimedia storytelling. This portfolio showcases my creative works, internships, published articles, and extracurricular achievements. Click on resume to know more about me</p>
+    <div class="circle-links">
+      
+      <a href="others\Resume 3.pdf" class="circle-link blue">Resume</a>
+    
+    </div>
+    </section>
+
+    <section id="creative" class="section">
+      <h3>Creative Works</h3>
+      <div class="entry">
+        <h4>Story telling Photograps</h4>
+        <div class="align">
+          <div class="entry">
+           <a href="story telling photos\extracted_image_1.jpg"><img src="story telling photos\extracted_image_1.jpg" alt="Profile Photo" /></a>
+            <p>Unemployment has hit the youth brought to this point.</p>
+          </div>
+          <div class="entry">
+            <a href="story telling photos\extracted_image_2.jpg"><img src="story telling photos\extracted_image_2.jpg" alt="Profile Photo" /></a>
+            <p>Some people, due to their habitual compulsion, do not refrain from extravagance even in poverty.</p>
+          </div>
+          <div class="entry">
+            <a href="story telling photos\extracted_image_3.jpg"><img src="story telling photos\extracted_image_3.jpg" alt="Profile Photo" /></a>
+            <p>How hard is it for an elderly person to work hard for his stomach and for his family when he is old enough to rest?</p>
+          </div>
+          <div class="entry">
+            <a href="story telling photos\extracted_image_4.jpg"><img src="story telling photos\extracted_image_4.jpg" alt="Profile Photo" /></a>
+            <p>What is the government doing in a country where evil is so publicly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="entry">
+        <h4>Kaash</h4>
+        <p>The YouTube video "KAASH" by SHAHEEN MEDIA ACADEMY is a short film about a famous man who longs for a normal, peaceful life away from the constant attention of fans and the stresses of his profession. He repeatedly wishes he weren't famous.</p>
+        <a href="https://youtu.be/j5jaLjgFsx4?si=UTPpyjQRcZEyW8Ty">View Work</a>
+      </div>
+      <div class="entry">
+        <h4>International Labour Day facts</h4>
+        <p>This video explains that International Workers' Day, also known as May Day, is celebrated worldwide on May 1st to honor the struggles and sacrifices of workers.</p>
+        <a href="https://youtu.be/ZqVcO1LUClI?si=xdYcNCqBNBxi7354">View Work</a>
+      </div>
+      <div class="entry">
+        <h4>Impact of muslim votes on election 2024</h4>
+        <p>In this detailed work, I have disscussed about the impact of the muslim votes on the Indian general Election 2024.</p>
+        <a href="others\Indian General Elections 2024 and the Impact of Muslim Votes- (1).pdf">View Work</a>
+      </div>
+    </section>
+
+    <section id="published" class="section">
+      <h3>Published Work</h3>
+      <div class="entry">
+        <h4>Basavakalyan of Basavanna</h4>
+        <p>The Shaheen Media Academy documentary delves into Basavakalyan, focusing on the Anubhava Mantapa, known as the world's first religious parliament that championed human values. It also sheds light on Basavanna's progressive ideologies against social discrimination and the significant milestone of Jagadguru Mate Mahadevi becoming the first female Jagadguru within the Lingayat tradition.</p>
+        <h6>Published by Shaheen Media Academy</h6>
+        <a href="https://youtu.be/AAqxvI5tQnQ?si=Nfq2vdjV8Hwc6rHj" target="_blank">Watch video</a>
+      </div>
+      <div class="entry">
+        <h4>World Largest railway bridge</h4>
+        <p>The world's largest railway bridge, in terms of height above the riverbed, is the Chenab Railway Bridge in Jammu and Kashmir, India. It stands 359 meters (1,178 feet) above the Chenab River, making it 35 meters taller than the Eiffel Tower according to the Hindu. The bridge is a single-arch railway bridge and was inaugurated on June 10, 2025.</p>
+        <h6>Published by THG(The hindustan gazette)</h6>
+        <a href="https://fb.watch/552At8NeQG/" target="_blank">Watch video</a>
+      </div>
+      <div class="entry">
+        <h4>How do political parties understand gender and women</h4>
+        <p>Indian political parties are increasingly targeting women voters with various promises, acknowledging their growing electoral participation despite often limited political awareness. While parties offer benefits to secure their votes, crucial issues like domestic violence and safety are often neglected. The article emphasizes women's need to leverage their voting power to demand accountability and ensure their rights.</p>
+        <h6>Published by Aura| Montly e Magazine</h6>
+        <a href="https://share.google/ZBCuVRFMNIBDMyJU4" target="_blank">Read Article</a>
+      </div>
+      <div class="entry">
+        <h4>My profile in THG</h4>
+        <p>My profile in THG contain all the published work I have done for The Hindustan gazette</p>
+        <h6>THG(The hindustan gazette)</h6>
+        <a href="https://thehindustangazette.com/author/mumtaz-fatima" target="_blank">Explore Now</a>
+      </div>
+    </section>
+
+    <section id="internship" class="section">
+      <h3>Internship Certificates</h3>
+      <div class="entry">
+        <h4>Aligarh literary festival 2021</h4>
+        <p>I have succesfully completed a internship at aligarh literary festival 2021, the certification is basically provided by CERT(Center for Educational Research and Training) </p>
+        <a href="internship\CERT (283).pdf" target="_blank">View Certificate</a>
+      </div>
+      <div class="entry">
+        <h4>Shaheen Media Academy</h4>
+        <p>I was succesfully able to achive the certification for diploma course in journalism and mass communication from shaheen media academy. I have also been involved in the internship work but unfortunately I have not yet recived the certificate for internship but soon I  will collect it.</p>
+        <a href="internship\WhatsApp Image 2025-06-15 at 13.58.14_e5fff937.jpg" target="_blank">View Certificate</a>
+      </div>
+      <div class="entry">
+        <h4>Just Media Initiative</h4>
+        <p>I have completed my internship at Just Media Initiative, and also able to obtain a professional certificate. Right now I dont have a proper soft copy but you can see this</p>
+        <a href="internship\WhatsApp Image 2025-06-15 at 17.20.54_f0b55547.jpg" target="_blank">View Certificate</a>
+      </div>
+    </section>
+
+    <section id="extracurricular" class="section">
+      <h3>Extracurricular Certificates</h3>
+      <div class="entry">
+        <h4>Connecting Hearts all india competetion</h4>
+        <p>I obtained this certificate for participating in Connecting Hearts all india competetion 2020 organised by SIO India, topic of competetion is "Towards understnding Islam"</p>
+        <a href="extracuricullar\WhatsApp Image 2025-06-15 at 17.01.18_7fe9385e.jpg" target="_blank">View Certificate</a>
+      </div>
+      <div class="entry">
+        <h4>Aura e Magazine</h4>
+        <p>This is a certificate of appreciation from aura e magazine for contributing on their valuable work</p>
+        <a href="extracuricullar\Mumtaz Fatima.pdf" target="_blank">View Certificate</a>
+      </div>
+      <div class="entry">
+        <h4>The spirit of Ramadhan</h4>
+        <p>This is part of the work for which I have been awarded the certificate of appreciation by Aura e Magazine</p>
+        <a href="https://auramag.in/the-spirit-of-ramadhan/" target="_blank">View work</a>
+      </div>
+      <div class="entry">
+        <h4>Making and Breaking habits in this blessed month</h4>
+        <p>This is a bit more part of the work for which I have been awarded the certificate of appreciation by Aura e Magazine</p>
+        <a href="https://auramag.in/making-or-breaking-habits-in-this-blessed-month/" target="_blank">View work</a>
+      </div>
+      <div class="entry">
+        <h4>The Ramadhan Question Quest</h4>
+        <p>This certificate is provided by FAMIAN for participating in their Ramadhan quest.</p>
+        <a href="extracuricullar\Certificate for Mumtaz Fatima.pdf" target="_blank">View work</a>
+      </div>
+    </section>
+
+    <section id="audiovisual" class="section">
+      <h3>Large Audio Files</h3>
+      <div class="entry">
+        <h4>Audio 1</h4>
+        <p>This audio file talks about a girl who cleared NDA examination and joined Air forces</p>
+        
+        <a href="audiofile\WhatsApp Audio 2025-06-15 at 17.53.54_87717bab.mp3" target="_blank">listen now</a>
+      </div>
+      <div class="entry">
+        <h4>Audio 2</h4>
+        <p>This audio file disscuss about the growing price of LPG gas cylinder and issues releated to price of LPG</p>
+        
+        <a href="audiofile\WhatsApp Audio 2025-06-15 at 17.53.54_59b9d6da.mp3" target="_blank">listen now</a>
+      </div>
+    </section>
+  </div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <h4>Contact Me</h4>
+      <p><strong>Email:</strong> mumtazfatma55355@gmail.com</p>
+      <p><strong>Phone:</strong> +91-7002524854</p>
+      <p><strong>Location:</strong> Assam, India, 784001</p>
+    </div>
+    <div class="footer-content">
+      <h4>Follow Me</h4>
+      <p>
+        <a href="https://x.com/MumtazKhan_25?t=XKtAmlVgeebjMIWVOJImPA&s=08" target="_blank">X</a> |
+        <a href="https://www.instagram.com/mum.taz_fatima?utm_source=qr&igsh=Y211bXd3YTNmeGs0" target="_blank">Instagram</a> |
+        <a href="mailto:mumtazfatma55355@gmail.com">Email</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Mumtaz Fatima. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
